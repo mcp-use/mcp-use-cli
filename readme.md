@@ -1,3 +1,16 @@
+# 🚨 ARCHIVED — NEW CLI AVAILABLE 🚨
+
+> **This project is no longer maintained.**  
+> Please use the new and actively supported CLI:  
+> 👉 **`@mcp-use/cli`** on npm  
+>  
+> ```bash
+> npm install --global @mcp-use/cli
+> ```
+
+
+
+
 <div align="center">
   <img src="static/readme.png" alt="Terminal" />
 </div>
