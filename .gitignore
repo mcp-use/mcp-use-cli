@@ -49,3 +49,6 @@ pids/
 # Temporary files
 .tmp/
 temp/
+
+# MCP todo list
+.mcp-todos.json

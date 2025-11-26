@@ -28,8 +28,34 @@ const PROVIDERS = {
 	openai: {
 		envVar: 'OPENAI_API_KEY',
 		defaultModel: 'gpt-4o',
-		factory: (key: string, cfg: LLMConfig) =>
-			new ChatOpenAI({openAIApiKey: key, modelName: cfg.model}),
+		factory: (key: string, cfg: LLMConfig) => {
+			const baseURL = process.env['OPENAI_BASE_URL'] || process.env['OPENAI_API_BASE'];
+			const config: any = {
+				openAIApiKey: key,
+				modelName: cfg.model,
+			};
+			if (baseURL) {
+				config.configuration = {
+					baseURL: baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL,
+				};
+			}
+			return new ChatOpenAI(config);
+		},
+	},
+	localopenai: {
+		envVar: 'LOCAL_OPENAI_API_KEY',
+		defaultModel: 'gpt-3.5-turbo',
+		factory: (key: string, cfg: LLMConfig) => {
+			const baseURL = process.env['LOCAL_OPENAI_BASE_URL'] || 'http://localhost:1234/v1';
+			const config: any = {
+				openAIApiKey: key || 'local-api-key',
+				modelName: cfg.model,
+				configuration: {
+					baseURL: baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL,
+				},
+			};
+			return new ChatOpenAI(config);
+		},
 	},
 	azureopenai: {
 		envVar: 'AZURE_OPENAI_API_KEY',

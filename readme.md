@@ -91,6 +91,42 @@ export ANTHROPIC_API_KEY=your_key_here
 # Then just run: mcp-use
 ```
 
+## Using Local OpenAI-Compatible APIs
+
+The CLI now supports local OpenAI-compatible APIs (like LM Studio, Ollama with OpenAI compatibility, LocalAI, etc.):
+
+### Option 1: Using the dedicated local provider
+
+```bash
+# Set your local API endpoint (defaults to http://localhost:1234/v1)
+export LOCAL_OPENAI_BASE_URL=http://localhost:1234/v1
+
+# Use any API key (local servers often don't require real keys)
+export LOCAL_OPENAI_API_KEY=local-api-key
+
+# Select the local provider and model
+mcp-use
+/model localopenai gpt-3.5-turbo
+```
+
+### Option 2: Using OpenAI provider with custom base URL
+
+```bash
+# Set custom base URL for OpenAI provider
+export OPENAI_BASE_URL=http://localhost:1234/v1
+export OPENAI_API_KEY=your-local-key
+
+# Use as normal OpenAI provider
+mcp-use
+/model openai gpt-3.5-turbo
+```
+
+Common local API servers:
+- **LM Studio**: Default URL is `http://localhost:1234/v1`
+- **Ollama (OpenAI mode)**: Use `http://localhost:11434/v1`
+- **LocalAI**: Default URL is `http://localhost:8080/v1`
+- **Text Generation WebUI**: With OpenAI extension at `http://localhost:5000/v1`
+
 ## Usage
 
 ```
@@ -187,6 +223,7 @@ Switch LLM providers and configure settings using slash commands:
 /model google gemini-1.5-pro
 /model mistral mistral-large-latest
 /model groq llama-3.1-70b-versatile
+/model localopenai gpt-3.5-turbo  # For local APIs
 
 # List available models
 /models
