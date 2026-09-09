@@ -1,25 +1,21 @@
 {
-	"compilerOptions": {
-		"target": "ES2022",
-		"rootDir": "source",
-		"module": "Node16",
-		"moduleResolution": "Node16",
-		"resolveJsonModule": true,
-		"jsx": "react-jsx",
-		"strict": true,
-		"declaration": true,
-		"declarationMap": true,
-		"outDir": "./dist",
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"skipLibCheck": true
-	},
-	"include": [
-		"source/**/*.ts",
-		"source/**/*.tsx"
-	],
-	"exclude": [
-		"node_modules",
-		"dist"
-	]
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2024", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
+    "types": ["node"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"]
 }
