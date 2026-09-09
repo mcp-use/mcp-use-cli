@@ -2,7 +2,7 @@
 >
 > 🚀 Please submit issues and pull requests to the monorepo instead.
 >
-> 🛠 This branch mirrors: `main`
+> 🛠 This branch mirrors: `canary`
 >
 > 🌐 Source folder: `libraries/typescript/packages/cli`
 
