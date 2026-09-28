@@ -1,5 +1,41 @@
 # @mcp-use/cli
 
+## 4.1.18-canary.1
+
+### Patch Changes
+
+- Rebuild bundled workspace code and synchronize published internal package metadata.
+
+## 4.1.18-canary.0
+
+### Patch Changes
+
+- Rebuild bundled workspace code and synchronize published internal package metadata.
+
+## 4.1.17
+
+### Patch Changes
+
+- 7d71ef7: Rebuild bundled workspace code and synchronize published internal package metadata.
+
+## 4.1.17-canary.0
+
+### Patch Changes
+
+- Rebuild bundled workspace code and synchronize published internal package metadata.
+
+## 4.1.16
+
+### Patch Changes
+
+- 3640505: Reject screenshot dimensions that Chrome cannot use.
+
+## 4.1.16-canary.0
+
+### Patch Changes
+
+- 7eb0466: Reject screenshot dimensions that Chrome cannot use.
+
 ## 4.1.15
 
 ### Patch Changes
