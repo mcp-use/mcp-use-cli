@@ -1,5 +1,23 @@
 # @mcp-use/cli
 
+## 4.4.2-canary.2
+
+### Patch Changes
+
+- 7ff7174: Join Inspector and dev-API paths through a single `basePath` rule so they work when `basePath` is `"/"`. Previously `inspector-route.ts` and `dev-api.ts` interpolated directly and produced `//inspector`, while `views/document.ts` special-cased the root, so `mcp-use start --with-inspector` advertised `/inspector` but only matched `//inspector` and fell through to the MCP handler. `mcp-use dev` now also prints `/inspector` instead of `//inspector`. Nested `basePath` values are unaffected.
+
+## 4.4.2-canary.1
+
+### Patch Changes
+
+- Rebuild bundled workspace code and synchronize published internal package metadata.
+
+## 4.4.2-canary.0
+
+### Patch Changes
+
+- bea1265: Install the right `@mcp-use/client` when `mcp-use client` or `mcp-use screenshot` auto-installs it. The CLI looked for its peer range in a package named `mcp-use`, but the code now lives in `@mcp-use/cli`, so every install fell back to `^2.0.0-alpha.0`. It now reads the range declared in `@mcp-use/cli`'s package.json, and the fallback is `^2.0.1`. On Windows, `cmd.exe` also stripped the `^` from the range, so npm and pnpm looked for the unpublished `2.0.0-alpha.0` and the install always failed. Each argument is now quoted and the package manager runs as one command string, which also removes Node's DEP0190 warning. macOS and Linux keep the direct spawn.
+
 ## 4.4.1
 
 ### Patch Changes
